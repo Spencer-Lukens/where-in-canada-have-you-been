@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import './provinces.js';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
             <div className="primaryContainer">
               <div className="inputArea">
               <h2 className="provinces">The 13 Provinces of Canada</h2>
-                <h3>Select your countries!
+                <h3>Select the provinces you'd like to visit!
                 </h3>
                   {/* <button>Add province to list</button>
 
