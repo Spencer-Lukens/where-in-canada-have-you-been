@@ -5,19 +5,35 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Your Canada Itinerary</h1>
       </header>
+
+      <main>
+          <div className="contentContainer">
+            <div className="listContainer">
+              <h3 classname="itinerary">Your Itinerary</h3>
+            </div>
+
+            <div className="primaryContainer">
+              <div className="inputArea">
+              <h2 className="provinces">The 13 Provinces of Canada</h2>
+                <h3>Select your countries!
+                </h3>
+                  {/* <button>Add province to list</button>
+
+                  <button>Remove province from list</button> */}
+              </div>
+
+              <div className="mapContainer">
+
+              </div>
+            </div>
+          </div>
+      </main>
+
+      <footer>
+        <p>Made at Juno College by Spencer Lukens</p>
+      </footer>
     </div>
   );
 }
