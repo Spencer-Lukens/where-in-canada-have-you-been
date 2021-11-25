@@ -35,6 +35,11 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
   justify-content: center;
 }
 
+.ulContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .provinces {
   border-style: solid;
   margin: 0;

@@ -51,8 +51,8 @@ function App() {
 
         // alternative - newState.push(data[property]) then 'book title', 'another book title'
         newState.push({
-          bookTitle: data[property],
-          bookID: property,
+          provinceTitle: data[property],
+          provinceID: property,
         });
       }
       setProvinces(newState);
@@ -70,7 +70,7 @@ function App() {
     // .child(remove) is your best bet to remove something from firebase
     // use two new firebase methods to remove an item
     // But what are we removing? Go to line 85.
-    /// The reference will then call a function called removebook
+    /// The reference will then call a function called removeProvince
     dbRef.child(whatToRemove).remove();
   }
 
@@ -92,10 +92,10 @@ function App() {
                       // create a key prop in the parent element of what you're creating, which in this case is a series of li's
                       <li key={province.provinceID}>
                         <p>{province.provinceTitle}</p>
-                        {/* This basically says, when we click on the   button, call this function called removeBook 
-                        // to and add an anonymous callback function before removeBook. This is our reference, so that when we click on the button, it says "call the reference"*/}
-                        <button onClick={ () => removeProvince(province.provinceID)}>Remove</button>
-                        <p>{province.provinceID}</p>
+                        {/* This basically says, when we click on the   button, call this function called removeProvince 
+                        // to and add an anonymous callback function before removeProvince. This is our reference, so that when we click on the button, it says "call the reference"*/}
+                        <button aria-pressed="false" onClick={ () => removeProvince(province.provinceID)}>Remove</button>
+                        {/* <p>{province.provinceID}</p> */}
                         {/* Place form clear here */}
                       </li>
                       )
@@ -103,15 +103,15 @@ function App() {
                   }  
                 </ul>
 
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="newBook">Add a new book to your shelf!</label>
+                <form aria-pressed="false" onSubmit={handleSubmit}>
+                    <label htmlFor="newProvince">Add a new province to your itinerary!</label>
                     <input
-                      id="newBook"
+                      id="newProvince"
                       type="text"
                       value={userInput}
                       onChange={handleChange}
                     />
-                    <button>Add Book</button>
+                    <button>Add province</button>
                 </form>
               </div>  
             </div>
