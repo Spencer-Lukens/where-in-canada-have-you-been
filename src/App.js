@@ -94,7 +94,7 @@ function App() {
                         <p>{province.provinceTitle}</p>
                         {/* This basically says, when we click on the   button, call this function called removeProvince 
                         // to and add an anonymous callback function before removeProvince. This is our reference, so that when we click on the button, it says "call the reference"*/}
-                        <button aria-pressed="false" onClick={ () => removeProvince(province.provinceID)}>Remove</button>
+                        <button onClick={ () => removeProvince(province.provinceID)}>Remove</button>
                         {/* <p>{province.provinceID}</p> */}
                         {/* Place form clear here */}
                       </li>
@@ -103,7 +103,7 @@ function App() {
                   }  
                 </ul>
 
-                <form aria-pressed="false" onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <label htmlFor="newProvince">Add a new province to your itinerary!</label>
                     <input
                       id="newProvince"
