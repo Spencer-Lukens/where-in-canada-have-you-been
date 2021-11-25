@@ -84,25 +84,36 @@ function App() {
           <div className="contentContainer">
             <div className="listContainer">
               <h3>Your itinerary</h3>
-                <div className="ulContainer">
-                  <ul>
-                    {
-                      provinces.map((province) => {
-                        return (
-                        // create a key prop in the parent element of what you're creating, which in this case is a series of li's
-                        <li key={province.provinceID}>
-                          <p>{province.provinceTitle}</p>
-                          {/* This basically says, when we click on the   button, call this function called removeBook 
-                          // to and add an anonymous callback function before removeBook. This is our reference, so that when we click on the button, it says "call the reference"*/}
-                          <button onClick={ () => removeProvince(province.provinceID)}>Remove</button>
-                          <p>{province.provinceID}</p>
-                          {/* Place form clear here */}
-                        </li>
-                        )
-                      })
-                    }  
-                  </ul>
-                </div>  
+              <div className="ulContainer">
+                <ul>
+                  {
+                    provinces.map((province) => {
+                      return (
+                      // create a key prop in the parent element of what you're creating, which in this case is a series of li's
+                      <li key={province.provinceID}>
+                        <p>{province.provinceTitle}</p>
+                        {/* This basically says, when we click on the   button, call this function called removeBook 
+                        // to and add an anonymous callback function before removeBook. This is our reference, so that when we click on the button, it says "call the reference"*/}
+                        <button onClick={ () => removeProvince(province.provinceID)}>Remove</button>
+                        <p>{province.provinceID}</p>
+                        {/* Place form clear here */}
+                      </li>
+                      )
+                    })
+                  }  
+                </ul>
+
+                <form onSubmit={handleSubmit}>
+                    <label htmlFor="newBook">Add a new book to your shelf!</label>
+                    <input
+                      id="newBook"
+                      type="text"
+                      value={userInput}
+                      onChange={handleChange}
+                    />
+                    <button>Add Book</button>
+                </form>
+              </div>  
             </div>
 
             <div className="primaryContainer">
