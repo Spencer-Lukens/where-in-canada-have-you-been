@@ -7,7 +7,7 @@ function App() {
   // inside of UL we want to append our books array with map
   // For every book, we want to return a certain type of mark up
   // {book} will be a component containing the properties (i.E title) hosted in our firebase database
-  const [books, setBooks] = useState([])
+  const [provinces, setProvinces] = useState([])
   // this hooks into any CHANGE that takes place on the input field
   const [userInput, setUserInput] = useState('');
   // FOLLOW THIS UP WITH AN onChange event
@@ -55,13 +55,13 @@ function App() {
           bookID: property,
         });
       }
-      setBooks(newState);
+      setProvinces(newState);
 
     })
 
   }, [])
 
-  const removeBook = (whatToRemove) => {
+  const removeProvince = (whatToRemove) => {
     // get access to our database
     // use a new firebase method to remove an item
     // get access to our database
@@ -86,19 +86,21 @@ function App() {
               <h3>Your itinerary</h3>
                 <div className="ulContainer">
                   <ul>
-                    <li>Quebec</li>
-                    <li>New Brunswick</li>
-                    <li>Ontario</li>
-                    <li></li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>10</li>
-                    <li>11</li>
-                    <li>12</li>
-                    <li>13</li>
+                    {
+                      provinces.map((province) => {
+                        return (
+                        // create a key prop in the parent element of what you're creating, which in this case is a series of li's
+                        <li key={province.provinceID}>
+                          <p>{province.provinceTitle}</p>
+                          {/* This basically says, when we click on the   button, call this function called removeBook 
+                          // to and add an anonymous callback function before removeBook. This is our reference, so that when we click on the button, it says "call the reference"*/}
+                          <button onClick={ () => removeProvince(province.provinceID)}>Remove</button>
+                          <p>{province.provinceID}</p>
+                          {/* Place form clear here */}
+                        </li>
+                        )
+                      })
+                    }  
                   </ul>
                 </div>  
             </div>
@@ -106,15 +108,16 @@ function App() {
             <div className="primaryContainer">
               <div className="inputArea">
                 <h2 className="provinces">The 13 Provinces of Canada</h2>
-                  <h3>Select the provinces you'd like to visit!
+                  <h3>Search the provinces you'd like to visit!
                   </h3>
                   {/* <button>Add province to list</button>
                   <button>Remove province from list</button> */}
               </div>
 
               <div className="mapContainer">
-                <img src="canada.png" alt="Map of Canada" />
+                <img src="canada2.png" alt="Map of Canada" id="canadaMap" />
               </div>
+
             </div>
           </div>
       </main>
