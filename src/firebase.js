@@ -1,11 +1,6 @@
 import firebase from 'firebase/app';
-<<<<<<< HEAD
 import 'firebase/database';
-=======
-import 'firebase/database';
-import Canada from "@svg-maps/canada";
-import React from "react";
-import ReactDOM from "react-dom";
+
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -27,4 +22,3 @@ firebase.initializeApp(firebaseConfig);
 export default firebase;
 
 // NO LONGER USING THIS APP
->>>>>>> d227e38 (test)
