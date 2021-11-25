@@ -26,7 +26,8 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 }
 
 .listContainer {
-  border-style: solid; 
+  border-style: solid;
+  overflow: hidden;
   background-color: whitesmoke;
   /* border-style: solid; */
   font-size: calc(5px + 2vmin);
@@ -36,8 +37,8 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 }
 
 .ulContainer {
-  display: flex;
-  flex-wrap: wrap;
+  display: inline;
+  padding: 20px;
 }
 
 .provinces {
@@ -57,7 +58,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 }
 
 .inputArea {
-  background-color: #9bb7c9;
+  background-color: #C7EDFF;
   height: 10vh;
 }
 
@@ -104,7 +105,8 @@ li {
   align-items: center;
   height: 69.5vh;
   border-style: solid;
-  background-color: #9bb7c9;
+  background-color: #C7EDFF;
+  overflow: hidden;
 }
 
 footer {
